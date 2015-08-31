@@ -1,0 +1,41 @@
+body {
+    font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-size: 18px;
+}
+
+.container {
+    font-family: 'Open Sans', sans-serif;
+    width: 900px;
+    margin: 0 auto;
+}
+
+#map, #cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100
+}
+
+#cover {
+    z-index: -99;
+    background-color: rgba(51, 51, 51, 0.6);
+}
+
+.header-container {
+    height: 90px;
+}
+
+#header {
+    padding-top: 32px;
+    width: 100%;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    z-index: 2;
+}
+
+#header .container {
+    padding-bottom: 18px;
+}
