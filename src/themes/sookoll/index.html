@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>{% if not(is_front_page) %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+    {% if meta.description %}
+    <meta name="description" content="{{ meta.description }}">
+    {% endif %}
+    {% if meta.robots %}
+    <meta name="robots" content="{{ meta.robots }}">
+    {% endif %}
+    
+    <link rel="icon" href="{{ theme_url }}/favicon.ico" type="image/x-icon" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <!-- OL -->
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.8.2/css/ol.css" type="text/css">
+    
+    <link rel="stylesheet" href="{{ theme_url }}/css/fonts.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/main.css">
+</head>
+
+<body>
+    <div id="map"></div>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand text-uppercase">{{ site_title }}</h3>
+                        <nav class="nav nav-masthead">
+                            <a class="nav-link active" href="#">Meist</a>
+                            <a class="nav-link" href="#">Tööd</a>
+                            <a class="nav-link" href="#">Asju</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="inner cover">
+                    <h1 class="cover-heading">Geograafilised veebiarendused</h1>
+                    <p class="lead">
+                        Tere, olen Mihkel. Tema on Miu.
+                    </p>
+                    <p class="lead">
+                        Meil on mees ja kass tüüpi ettevõtmine ja koos teeme geograafilisi arendusi. Enamasti veebi.
+                        Põhiliselt kaardirakendusi, alates lihtsast näita-mu-asukohta-veebilehel kuni keerulisemate ruumiandmete haldamise töövahenditeni.
+                    </p>
+                    <p class="lead">
+                        Veebiarendus: HTML5 CSS3 JS PHP Bootstrap jQuery Coffeescript
+                    </p>
+                    <p class="lead">
+                        Kaardimootorid: Leaflet OpenLayers 2, OpenLayers 3
+                    </p>
+                </div>
+
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p><b>{{ config.date_year }}</b> {{ site_title }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <script src="{{ theme_url }}/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="http://openlayers.org/en/v3.8.2/build/ol.js"></script>
+    <script>
+        
+        /*var extent = [282560.67, 6381157.44, 734255.01, 6658861.37];
+        var projection = new ol.proj.Projection({
+          code: 'EPSG:3301',
+          extent: extent
+        });
+        
+        var layer = new ol.layer.Tile({
+            extent: [282560.67, 6381157.44, 734255.01, 6658861.37],
+            source: new ol.source.TileWMS({
+                url: 'http://kaart.maaamet.ee/wms/ajalooline?',
+                crossOrigin: 'anonymous',
+                params: {
+                    'LAYERS': 'ew_200T,ew_50T,ew25T',
+                    'FORMAT': 'image/png',
+                    'TILED': true
+                },
+                serverType: 'mapserver'
+            })
+        });
+        
+        var map = new ol.Map({
+            //controls: [],
+            layers: [layer],
+            target: 'map',
+            view: new ol.View({
+                projection: projection,
+                center: ol.proj.fromLonLat([25, 48], projection),
+                extent: extent,
+                zoom: 9
+            })
+        });*/
+        
+        var layers = [
+            new ol.layer.Tile({
+                source: new ol.source.OSM({
+                    url: 'http://{a-c}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
+                    crossOrigin: null
+                })
+            })
+        ];
+        
+        var view = new ol.View({
+            center: ol.proj.fromLonLat([25.05, 58.45]),
+            zoom: 12
+        });
+        
+        var map = new ol.Map({
+            controls: [],
+            layers: layers,
+            loadTilesWhileAnimating: true,
+            target: 'map',
+            view: view
+        });
+        
+        /*setTimeout(function(){
+            var pan = ol.animation.pan({
+                duration: 200000,
+                source: view.getCenter()
+            });
+            map.beforeRender(pan);
+            view.setCenter(ol.proj.fromLonLat([26.3, 57.6]));
+        }, 2000);*/
+        
+    </script>
+</body>
+</html>
