@@ -4,9 +4,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Mobile -->
-    <meta content="width=device-width, user-scalable=no" name="viewport">
-    
     <title>Mihkel Oviir | Sookolli Kaardid</title>
 
     <meta name="description" content="Web developer based out of Halifax, Nova Scotia - specializing in business design, web apps, and custom WordPress development.">
@@ -14,30 +11,49 @@
 
     <!-- Web fonts -->
     <link href='//fonts.googleapis.com/css?family=Open+Sans:700,300,400' rel='stylesheet' type='text/css'>
-    <link href="css/fonts.css" rel="stylesheet" type="text/css">
 
     <!-- CSS -->
-    <link href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" rel="stylesheet" />
-    <link href="css/normalize.css" rel="stylesheet" type="text/css">
     <link href="css/app.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+    <!-- Mobile -->
+    <meta content="width=device-width, user-scalable=no" name="viewport">
 
     <!-- Favicon -->
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/favicon/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="img/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#999999">
+    <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 
 </head>
 
-<body>
+<body class="index cf" id="top">
     <div id="map"></div>
-    <div id="cover"></div>
+    <div id="map-cover"></div>
     <header class="header-container">
-        <div id="header">
+        <div class="default" id="header">
             <div class="container container-top">
 
                 <!-- Logo -->
                 <div class="brand">
                     <a href="/">
-                        <div id="logo"><img alt="logo" src="img/logo.png"></div>
+                        <div id="logo"></div>
                         <div class="info">
                             <div class="name">
                                 MIHKEL OVIIR
@@ -56,6 +72,7 @@
                             <!-- Nav items -->
                             <li><a class="active" data-nav="home" href="#top">HOME</a></li>
                             <li><a data-nav="projects" href="#projects">PROJECTS</a></li>
+                            <li><a data-nav="skills" href="#skills">SKILLS</a></li>
                             <li><a data-nav="contact" href="#contact">CONTACT</a></li>
                         </ul>
                         <!-- Hamburger -->
@@ -68,6 +85,9 @@
                                 </a>
                                 <a href="#projects">
                                     <li>PROJECTS</li>
+                                </a>
+                                <a href="#skills">
+                                    <li>SKILLS</li>
                                 </a>
                                 <a href="#contact">
                                     <li>CONTACT</li>
@@ -88,12 +108,12 @@
 
                     <!-- Introduction -->
                     <h1 class="fadein-fast">Web mapping done right.</h1>
-                    <p class="fadein-fast">I am a web developer from Tartu, Estonia. I enjoy building everything from small business sites to rich interactive web apps. If you are a business seeking a web presence or an employer looking to hire, you can get in touch with me <a href="#contact">here</a>.</p>
+                    <p class="fadein-fast">I am a GIS specialist and web developer from Tartu, Estonia. I enjoy building everything from maps in webpages to rich interactive GIS solutions. If you need help about presenting spatial information, you can get in touch with me <a href="#contact">here</a>.</p>
 
                     <!-- Call to action -->
                     <div class="callToAction">
-                        <a href="http://goo.gl/forms/gYi9a11a7U" target="_blank" class="btn btn-freelance">I need a website<span class="icon-chevron-right"></span></a>
-                        <a href="resume.pdf" target="_blank" class="btn btn-hire">I'm looking to hire<span class="icon-chevron-right"></span></a>
+                        <a href="#contact" class="btn btn-freelance">I need a map<span class="icon-chevron-right"></span></a>
+                        <a href="#skills" class="btn btn-hire">I can help with those<span class="icon-chevron-right"></span></a>
                     </div>
 
                 </div>
@@ -179,48 +199,70 @@
                 <div class="separator"></div>
             </div>
 
-            <!-- Clients -->
-            <div class="row" id="clients">
+            <!-- Viva Group -->
+            <div class="row">
                 <div class="container">
-                    <div class="center">
-                        <!-- Clients -->
-                        <div class="center">
-                            <div class="client"><img alt="Atlantic Exworks" class="grayscale client-fade" src="img/clients/atlanticexworks.png"></div>
-                            <div class="client"><img alt="Herder Holiday Homes" class="grayscale client-fade" src="img/clients/herderholidayhomes.png"></div>
-                            <div class="client"><img alt="Viva Group" class="grayscale" src="img/clients/vivagroup.png"></div>
-                            <div class="client"><img alt="Celtic Shores Coastal Trail" class="grayscale" src="img/clients/celticshores.png"></div>
+                    <div class="portfolio-item cf">
+
+                        <!-- Screenshot -->
+                        <div class="portfolio-col screenshot">
+                            <img alt="Viva Group" src="img/viva-group.jpg">
+                        </div>
+
+                        <!-- Details -->
+                        <div class="portfolio-col description-container">
+
+                            <!-- Title -->
+                            <h3><a href="http://thevivagroup.ca" target="_blank">Viva Group</a></h3>
+
+                            <!-- Descriptions -->
+                            <p class="description">Viva Group is a public relations and community development company based out of Labrador. With 30 years of combined experience under their belt, they specialize in communications (internal and external) and event management.
+                            </p>
+
+                            <!-- Skills -->
+                            <ul class="skills">
+                                <li>WordPress</li>
+                                <li>Email Setup</li>
+                                <li>HTML5/CSS3</li>
+                                <li>jQuery</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Map -->
-            <div id="contactMap" class="row">
-                <div class="map-offset">
-                    <!-- Google Maps canvas -->
-                    <div id="map-canvas"></div>
+        </div>
+        
+        <!-- skills -->
+        <div class="row" id="skills">
+            <div class="container">
+                <div class="center">
+                    <div class="item"><img alt="jQuery" class="grayscale client-fade" src="img/JQuery_logo.svg"></div>
+                    <div class="item"><img alt="Herder Holiday Homes" class="grayscale client-fade" src="img/clients/herderholidayhomes.png"></div>
+                    <div class="item"><img alt="Viva Group" class="grayscale" src="img/clients/vivagroup.png"></div>
+                    <div class="item"><img alt="Celtic Shores Coastal Trail" class="grayscale" src="img/clients/celticshores.png"></div>
                 </div>
             </div>
         </div>
+        
     </main>
-    <!-- Contact -->
 
+    <!-- Map placeholder -->
+    <div id="contact-map"></div>
+
+    <!-- Contact -->
     <div id="footer">
         <div class="row">
             <div class="container">
 
                 <!-- Contact details -->
                 <div class="span4 center">
-                    <img alt="profile" src="img/profile.png">
-                    <div class="details">
-                        <a class="details-small" href="tel:9027197079">+1 (902) 719-7079</a>
-                    </div>
+                    <img alt="profile" class="avatar" src="http://www.gravatar.com/avatar/7a261b9f345522751c0fcb20857a2740">
 
                     <div id="social">
-                        <a href="http://github.com/jonnymaceachern" target="_blank"><span class="icon-github"></span></a>
-                        <a href="skype:jonny.maceachern?chat"><span class="icon-skype"></span></a>
-                        <a href="http://ca.linkedin.com/in/jonnymaceachern" target="_blank"><span class="icon-linkedin"></span></a>
-                        <a href="mailto:info@jonny.me"><span class="icon-email"></span></a>
+                        <a href="http://github.com/sookoll" target="_blank"><span class="icon-github"></span></a>
+                        <a href="skype:moviir?chat"><span class="icon-skype"></span></a>
+                        <a href="mailto:mihkel@sookoll.ee"><span class="icon-email"></span></a>
                     </div>
 
                 </div>
@@ -254,19 +296,20 @@
     <div class="center" id="links">
         <ul>
             <!-- Copyright -->
-            <li>&copy; sookoll.ee 2015 </li>
+            <li>&copy; SOOKOLL.EE 2015 </li>
 
             <!-- Links -->
-            <li><a href="resume.pdf" target="_blank">VIEW RESUME</a></li>
-            <li><a href="http://github.com/jonnymaceachern" target="_blank">GITHUB</a></li>
+            <li><a href="http://github.com/sookoll" target="_blank">GITHUB</a></li>
         </ul>
     </div>
 
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+    <!-- Leaflet -->
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
-    <!-- Minified JS -->
+    <!-- App JS -->
     <script src="js/app.js"></script>
 
 </body>
