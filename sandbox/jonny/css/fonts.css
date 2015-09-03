@@ -1,12 +1,4 @@
 @font-face {
-    font-family: fontello;
-    src: url(../font/fontello.eot?66648078);
-    src: url(../font/fontello.eot?66648078#iefix) format('embedded-opentype'), url(../font/fontello.woff?66648078) format('woff'), url(../font/fontello.ttf?66648078) format('truetype'), url(../font/fontello.svg?66648078#fontello) format('svg');
-    font-weight: 400;
-    font-style: normal
-}
-
-@font-face {
 	font-family:'Myriad Set Pro';
 	font-style:normal;
 	font-weight:100;

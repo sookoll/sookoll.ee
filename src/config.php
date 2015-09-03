@@ -24,7 +24,7 @@ $config['site_title'] = 'Sookolli Kaardid';              // Site title
 /*
  * THEME
  */
-$config['theme'] = 'sookoll';                // Set the theme (defaults to "default")
+$config['theme'] = 'default';                // Set the theme (defaults to "default")
 // $config['twig_config'] = array(              // Twig settings
 //	'cache' => false,	                // To enable Twig caching change this to CACHE_DIR
 //	'autoescape' => false,                  // Autoescape Twig vars
@@ -51,3 +51,5 @@ $config['content_dir'] = 'content/';    // Content directory
 // $config['custom_setting'] = 'Hello';           // Can be accessed by {{ config.custom_setting }} in a theme
 
 $config['date_year'] = date("Y");
+
+?>

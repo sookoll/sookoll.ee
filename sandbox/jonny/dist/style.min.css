@@ -168,13 +168,25 @@ table {
 
 #map-cover {
     z-index: -99;
-    background-color: rgba(51, 51, 51, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 #logo {
     display: inline-block;
     float: left;
-    margin-right: 10px
+    margin-right: 10px;
+    margin-top: -22px;
+    width: 100px;
+    height: 80px;
+    background: url('../img/logo.png') no-repeat;
+    background-size: contain
+}
+
+.nav-fixed #logo {
+    width: 50px;
+    height: 50px;
+    margin-top: -7px;
+    background-image: url('../img/logo_black.png');
 }
 
 .container {
@@ -194,17 +206,19 @@ table {
     border-bottom: none
 }
 
-#clients {
+#skills {
     z-index: 1;
     position: relative;
-    border-top: 1px solid #EEE;
-    border-bottom: 1px solid rgba(128, 128, 128, .22);
+    background: none;
     padding: 20px 0 45px
 }
 
-.client {
+.item {
     display: inline-block;
     width: 220px
+}
+.item img {
+    width: 200px;
 }
 
 em {
@@ -222,7 +236,7 @@ em {
 }
 
 #row-hero {
-    padding: 115px 0 200px
+    padding: 150px 0 250px
 }
 
 #hero p {
@@ -255,7 +269,7 @@ h3 a {
 
 #footer {
     background: #FFF;
-    padding-top: 30px
+    padding-top: 40px
 }
 
 .description {
@@ -371,6 +385,11 @@ h3 a {
 #hero p {
     font-size: 16px;
     line-height: 26px
+}
+
+#contact-map {
+    width: 100%;
+    height: 400px
 }
 
 #social img:hover {
@@ -615,11 +634,6 @@ p {
     color: #FF0D13!important
 }
 
-#map-canvas {
-    width: 100%;
-    height: 400px
-}
-
 .pull-right {
     float: right
 }
@@ -706,6 +720,10 @@ h2 a:hover {
     height: 30px;
     display: none;
     background: url(../img/hamburger.png)
+}
+
+.nav-fixed .hamburger {
+    background: url(../img/hamburger_black.png)
 }
 
 .btn {
@@ -873,9 +891,8 @@ textarea {
 
 #links {
     padding: 65px 0 62px;
-    background: #f3f3f3;
     font-size: 11px;
-    color: #818181;
+    color: white;
     font-family: 'open sans', sans-serif;
     clear: both
 }
@@ -886,7 +903,7 @@ textarea {
 }
 
 #links li a {
-    color: #818181;
+    color: white;
     -webkit-transition: .2s;
     transition: .2s
 }
@@ -895,6 +912,11 @@ textarea {
     position: absolute;
     margin-top: -11px;
     margin-left: 10px
+}
+
+.avatar {
+    border-radius: 50px;
+    border: 7px solid white;
 }
 
 .fadein-slow {
@@ -1040,7 +1062,7 @@ textarea {
 
 @media (max-width:800px) {
     .nav-fixed {
-        position: relative!important
+        /*position: relative!important*/
     }
 }
 
@@ -1068,8 +1090,8 @@ textarea {
     #hero p {
         line-height: 25px
     }
-    #clients {
-        display: none
+    #skills {
+        /*display: none*/
     }
     .header-container {
         height: 140px
@@ -1084,7 +1106,7 @@ textarea {
     .span4 {
         width: 100%
     }
-    #map-canvas {
+    #contact-map {
         height: 200px
     }
     #header {
@@ -1180,14 +1202,6 @@ textarea {
     #hero img {
         display: none
     }
-}
-
-@font-face {
-    font-family: fontello;
-    src: url(../font/fontello.eot?66648078);
-    src: url(../font/fontello.eot?66648078#iefix) format('embedded-opentype'), url(../font/fontello.woff?66648078) format('woff'), url(../font/fontello.ttf?66648078) format('truetype'), url(../font/fontello.svg?66648078#fontello) format('svg');
-    font-weight: 400;
-    font-style: normal
 }
 
 [class*=" icon-"]:before,
