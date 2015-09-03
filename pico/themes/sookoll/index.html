@@ -2,51 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    
-    <title>{% if not(is_front_page) %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
-    {% if meta.description %}
-    <meta name="description" content="{{ meta.description }}">
-    {% endif %}
-    <meta name="keywords" content="web mapping, web development, GIS">
-    {% if meta.robots %}
-    <meta name="robots" content="{{ meta.robots }}">
-    {% endif %}
-    
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ theme_url }}/img/favicon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{ theme_url }}/img/favicon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ theme_url }}/img/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ theme_url }}/img/favicon/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ theme_url }}/img/favicon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ theme_url }}/img/favicon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ theme_url }}/img/favicon/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ theme_url }}/img/favicon/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ theme_url }}/img/favicon/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="{{ theme_url }}/img/favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="{{ theme_url }}/img/favicon/favicon-194x194.png" sizes="194x194">
-    <link rel="icon" type="image/png" href="{{ theme_url }}/img/favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="{{ theme_url }}/img/favicon/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="{{ theme_url }}/img/favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="{{ theme_url }}/img/favicon/manifest.json">
-    <link rel="shortcut icon" href="{{ theme_url }}/img/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#999999">
-    <meta name="msapplication-TileImage" content="{{ theme_url }}/img/favicon/mstile-144x144.png">
-    <meta name="msapplication-config" content="{{ theme_url }}/img/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    
-    <!-- Web fonts -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:700,300,400' rel='stylesheet' type='text/css'>
-    <link href="{{ theme_url }}/css/fonts.css" rel="stylesheet" type="text/css">
-
-    <!-- CSS -->
-    <link href="{{ theme_url }}/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-    <link href="{{ theme_url }}/css/app.css" rel="stylesheet" type="text/css">
-
+    {% include 'head.html' %}
 </head>
 
 <body data-spy="scroll" data-target="#navigation" data-offset="80">
@@ -54,75 +10,13 @@
     <div id="map-cover"></div>
     <header id="top">
         
-        <nav class="navbar">
-            <div class="container">
-                <!-- Logo -->
-                <a class="navbar-brand nav-link" href="#top">
-                    <div class="logo"></div>
-                    <div class="info">
-                        <div class="name">
-                            MIHKEL OVIIR
-                        </div>
-                        <div class="title">
-                            SOOKOLLI KAARDID
-                        </div>
-                    </div>
-                </a>
-                <div class="hidden-sm-down" id="navigation">
-                    <ul class="nav navbar-nav pull-right">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#top">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects">PROJECTS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#skills">SKILLS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">CONTACT</a>
-                        </li>
-                    </ul>
-                </div>
-                <button id="hamburger" class="navbar-toggler hidden-md-up pull-right" type="button" >
-                    &#9776;
-                </button>
-                <div id="dropdown">
-                    <ul class="text-center">
-                        <li>
-                            <a class="nav-link" href="#top">HOME</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="#projects">PROJECTS</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="#skills">SKILLS</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="#contact">CONTACT</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        {% include 'nav.html' %}
         
         <!-- Landing -->
         <div id="hero" class="text-center">
             <div class="container">
 
-                <!-- Introduction -->
-                <h1 class="fadein-fast">Web mapping done right.</h1>
-                <p class="fadein-fast">
-                    I am a GIS specialist and web developer from Tartu, Estonia.<br>
-                    I enjoy building everything from maps in webpages to rich interactive GIS solutions.
-                    If you need help about presenting spatial information, you can get in touch with me <a class="nav-link" href="#contact">here</a>.
-                </p>
-
-                <!-- buttons -->
-                <div class="buttons">
-                    <a href="#contact" class="btn btn-lg btn-help nav-link">I need a map <i class="fa fa-chevron-right"></i></a>
-                    <a href="#skills" class="btn btn-lg btn-skill nav-link">I can help with those <i class="fa fa-chevron-right"></i></a>
-                </div>
+                {{ content }}
 
             </div>
         </div>

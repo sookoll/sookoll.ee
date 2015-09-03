@@ -1,0 +1,502 @@
+/* general */
+
+body {
+    font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-size: 18px;
+    position: relative;
+}
+
+body a,
+body a:visited {
+    color: #F65151;
+}
+
+.tags {
+    padding: 0;
+}
+
+.tags li {
+    color: #FFF;
+    display: inline;
+    border-radius: 4px;
+    font-size: 14px;
+    background: #F04;
+    padding: 6px 9px
+}
+
+.avatar {
+    width: 120px;
+    border-radius: 60px;
+    border: 7px solid white;
+}
+
+/* bg map */
+
+#map, #map-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100
+}
+
+#map-cover {
+    z-index: -99;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* header nav */
+
+header {
+    font-family: 'open sans';
+}
+
+header a, header a:hover, header a:visited {
+    color: white;
+}
+
+header .logo {
+    float: left;
+    margin-right: 10px;
+    margin-top: -8px;
+    width: 100px;
+    height: 80px;
+    background: url('../img/logo.png') no-repeat;
+    background-size: contain;
+}
+
+header .info {
+    float: left;
+    margin-top: 3px
+}
+
+header .name {
+    font-weight: 800;
+    font-size: 18px;
+}
+
+header .title {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #ff0047
+}
+
+header button.navbar-toggler {
+    outline: none;
+    color: white;
+    border: 2px solid white;
+    margin-top: 10px
+}
+
+header .navbar-nav .nav-link {
+    font-size: 13px;
+    padding: 1rem 0.5rem;
+    border-bottom: transparent 4px solid;
+}
+
+header .navbar-nav .nav-link.active {
+    border-bottom: #f04 4px solid
+}
+
+/* navbar scrolled */
+
+header nav.navbar-fixed-top {
+    padding-bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid #F5F5F5
+}
+
+header nav.navbar-fixed-top li {
+    position: relative;
+    bottom: -1px
+}
+
+header nav.navbar-fixed-top .name,
+header nav.navbar-fixed-top #navigation li a {
+    color: #303030
+}
+
+header nav.navbar-fixed-top .info {
+    margin-top: 0px
+}
+
+
+header nav.navbar-fixed-top .logo {
+    width: 50px;
+    height: 50px;
+    margin-top: -5px;
+    background-image: url('../img/logo_black.png');
+}
+
+header nav.navbar-fixed-top button.navbar-toggler {
+    color: #f04;
+    border: 2px solid #f04;
+    margin-top: 3px
+}
+
+
+/* navbar toggled */
+
+#dropdown {
+    background: #f04;
+    right: 0;
+    left: 0;
+    position: absolute;
+    margin: 60px 20px 30px;
+    display: none;
+    border-radius: 3px
+}
+
+#dropdown ul {
+    margin: 0;
+    padding: 0;
+}
+
+#dropdown ul li {
+    display: block;
+    padding: 11px 0;
+    font-weight: 700;
+    font-size: 17px;
+    border-bottom: 1px solid white;
+    color: white
+}
+
+#dropdown ul li:last-child {
+    border-bottom: none
+}
+
+#dropdown ul li a {
+    display: block;
+    text-decoration: none
+}
+
+/* hero */
+
+#hero {
+    color: white;
+    font-size: 18px;
+    padding: 50px 0 50px
+}
+
+#hero p {
+    padding: 25px 0 10px;
+    margin-bottom: 0px;
+    font-weight: 200;
+}
+
+#hero a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+#hero p a {
+    border-bottom: 1px #fff dotted
+}
+
+#hero p a:hover {
+    color: #f04;
+    transition: all .4s ease
+}
+
+#hero .buttons a {
+    display: block;
+    margin: 0.3em 0;
+    background: #F04
+}
+
+#hero .buttons a.btn-skill {
+    background: rgba(255, 255, 255, .14)
+}
+
+#hero .buttons a i {
+    margin-left: 6px
+}
+
+/* main */
+main {
+    
+}
+
+main .page {
+    background: white;
+}
+
+/* projects */
+
+#projects {
+    padding: 5rem 0;
+}
+
+#projects .featurette-divider {
+    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+#projects .featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -.05rem;
+}
+
+/* skills */
+
+#skills {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background: #f7f7f7
+}
+
+#skills ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+
+#skills ul li {
+    display: inline-block;
+    position: relative;
+    width: 30%;
+    border: 0;
+    padding: 1rem;
+}
+
+#skills ul li > img {
+    max-width: 100%;
+}
+
+/* contacts */
+
+#contact-map {
+    width: 100%;
+    height: 200px
+}
+
+#contact {
+    padding: 0 0 6rem
+}
+
+#contact .profile {
+    position: relative;
+    top: -50px
+}
+
+#contact .social {
+    margin-top: 24px
+}
+
+#contact .social a {
+    color: #F04;
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin-right: .7rem
+}
+#contact .social a:last-child {
+    margin-right: 0
+}
+
+#contact form {
+    margin-top: 2rem
+}
+
+/* footer */
+
+footer {
+    padding: 65px 0 62px;
+    font-size: 13px;
+    color: white;
+    font-family: 'open sans', sans-serif;
+    clear: both
+}
+
+footer li {
+    display: inline-block;
+    margin: 0 15px
+}
+
+footer li a {
+    color: white;
+    -webkit-transition: .2s;
+    transition: .2s
+}
+
+footer li a:hover {
+    color: #F04;
+}
+
+/* responsive */
+
+
+/* Small devices (landscape phones, 34em and up) */
+@media (min-width: 34em) {
+    
+    /* hero */
+    
+    #hero .buttons a {
+        display: inline-block;
+        margin: 1em 0.3em;
+    }
+    
+    /* projects */
+    #projects .featurette-heading {
+        font-size: 50px;
+    }
+    
+    /* skills */
+    #skills ul li {
+        width: 30%;
+    }
+}
+
+/* Medium devices (tablets, 48em and up) */
+@media (min-width: 48em) {
+    
+    /* general */
+    
+    h1 {
+        font-size: 55px;
+        color: #fff;
+        font-weight: 800
+    }
+    
+    /* hero */
+    
+    #hero {
+        line-height: 26px;
+        padding: 150px 0 150px;
+        font-size: 18px;
+    }
+    
+    #hero p {
+        padding: 45px 0 18px;
+        margin-bottom: 40px
+    }
+    
+    /* skills */
+    #skills ul li {
+        width: 22%;
+    }
+    
+    /* contact map */
+    #contact-map {
+        width: 100%;
+        height: 400px
+    }
+}
+
+/* Large devices (desktops, 62em and up) */
+@media (min-width: 62em) {
+    
+    /* header */
+    header .navbar-nav .nav-link {
+        padding: 1rem;
+    }
+    
+    /* projects */
+    #projects .featurette-heading {
+        margin-top: 4rem;
+    }
+    
+    /* skills */
+    #skills ul li {
+        width: 18%;
+    }
+}
+
+/* Extra large devices (large desktops, 75em and up) */
+@media (min-width: 75em) {
+    
+}
+
+/* fadeing */
+
+@keyframes fadein {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@-moz-keyframes fadein {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@-ms-keyframes fadein {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@-o-keyframes fadein {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.fadein-slow {
+    -webkit-animation: fadein 4.5s;
+    -moz-animation: fadein 4.5s;
+    -ms-animation: fadein 4.5s;
+    -o-animation: fadein 4.5s;
+    animation: fadein 4.5s
+}
+
+.fadein-normal {
+    -webkit-animation: fadein 2.5s;
+    -moz-animation: fadein 2.5s;
+    -ms-animation: fadein 2.5s;
+    -o-animation: fadein 2.5s;
+    animation: fadein 2.5s
+}
+
+.fadein-fast {
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -ms-animation: fadein 2s;
+    -o-animation: fadein 2s;
+    animation: fadein 2s
+}
+
+.client-fade {
+    -webkit-filter: brightness(150%) grayscale(1)!important;
+    -webkit-transition: -webkit-filter 1s;
+    transition: -webkit-filter 1s
+}
+
+.client-fade:hover {
+    -webkit-filter: brightness(100%) grayscale(0)!important
+}
+
+.grayscale {
+    -webkit-transition: all .6s ease;
+    -webkit-filter: grayscale(100%);
+    filter: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale')
+}
+
+.grayscale:hover {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(0%);
+    opacity: 1
+}
