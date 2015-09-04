@@ -5,7 +5,7 @@
     {% include 'head.html' %}
 </head>
 
-<body data-spy="scroll" data-target="#navigation" data-offset="80">
+<body data-spy="scroll" data-target="#navigation" data-offset="180">
     <div id="map"></div>
     <div id="map-cover"></div>
     <header id="top">
@@ -26,102 +26,63 @@
     <main>
         
         <!-- Projects -->
-        <div id="projects" class="page">
+        <section id="projects" class="page">
             <div class="container">
                 
-                <div class="row featurette">
+                
+                {% for page in pages %}
+                {% if page.category == 'project' and page.front %}
+                
+                <article class="row featurette">
                     <div class="col-md-7">
-                        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-                        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                        <h2 class="featurette-heading">{{ page.title }}</h2>
+                        <p class="lead">{{ page.content }}</p>
                         <!-- Skills -->
+                        {% if page.tags|length > 1 %}
                         <ul class="tags">
-                            <li>Google Maps API v3</li>
-                            <li>Twitter Search API 1.1</li>
-                            <li>HTML5/CSS3</li>
-                            <li>jQuery/AJAX</li>
-                            <li>Bootstrap 3</li>
-                            <li>PHP</li>
+                            {% for tag in page.tags %}
+                            <li>{{ tag }}</li>
+                            {% endfor %}
                         </ul>
+                        {% endif %}
                     </div>
                     <div class="col-md-5">
-                        <img class="featurette-image img-responsive center-block" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzUwMHg1MDAvYXV0bwpDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNi4wLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48IVtDREFUQVsjaG9sZGVyXzE0ZjkwMzAzMzg1IHRleHQgeyBmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MjVwdCB9IF1dPjwvc3R5bGU+PC9kZWZzPjxnIGlkPSJob2xkZXJfMTRmOTAzMDMzODUiPjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjRUVFRUVFIi8+PGc+PHRleHQgeD0iMTg1LjEyNSIgeT0iMjYxLjEiPjUwMHg1MDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="Generic placeholder image">
+                        <img class="featurette-image img-responsive center-block" src="{{ base_url }}/{{ page.image }}" alt="Generic placeholder image">
                     </div>
-                </div>
+                </article>
 
                 <hr class="featurette-divider">
-
-                <div class="row featurette">
-                    <div class="col-md-7 col-md-push-5">
-                        <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-                        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-                        <!-- Skills -->
-                        <ul class="tags">
-                            <li>Google Maps API v3</li>
-                            <li>Twitter Search API 1.1</li>
-                            <li>HTML5/CSS3</li>
-                            <li>jQuery/AJAX</li>
-                            <li>Bootstrap 3</li>
-                            <li>PHP</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-5 col-md-pull-7">
-                        <img class="featurette-image img-responsive center-block" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzUwMHg1MDAvYXV0bwpDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNi4wLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48IVtDREFUQVsjaG9sZGVyXzE0ZjkwMzAzMzg1IHRleHQgeyBmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MjVwdCB9IF1dPjwvc3R5bGU+PC9kZWZzPjxnIGlkPSJob2xkZXJfMTRmOTAzMDMzODUiPjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjRUVFRUVFIi8+PGc+PHRleHQgeD0iMTg1LjEyNSIgeT0iMjYxLjEiPjUwMHg1MDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="Generic placeholder image">
-                    </div>
+                
+                
+                {% endif %}
+                {% endfor %}
+                
+                <!-- buttons -->
+                <div class="buttons text-center">
+                    <a href="{{ base_url }}/projects" class="btn btn-lg btn-a">View more <i class="fa fa-chevron-right"></i></a>
+                    <a href="{{ base_url }}/posts" class="btn btn-lg btn-b">Read about Geoforms <i class="fa fa-chevron-right"></i></a>
                 </div>
                 
             </div>
 
-        </div>
+        </section>
         
-        <div id="skills" class="text-muted text-center page">
+        <section id="skills" class="text-muted text-center page">
             <div class="container">
                 <div class="row">
                     <ul>
-                        <li>
-                            <img src="img/skills/html.png" class="grayscale client-fade">
-                        </li>
-                        <li>
-                            <img src="img/skills/jquey.png" class="grayscale client-fade">
-                        </li>
-                        <li>
-                            <img src="img/skills/bootstrap.png" class="grayscale client-fade">
-                        </li>
-                        <li>
-                            <img src="img/skills/openlayers.png" class="grayscale client-fade">
-                        </li>
-                        <li>
-                            <img src="img/skills/leaflet.png" class="grayscale client-fade">
-                        </li>
-                        <li>
-                            <img src="img/skills/nodejs.png" class="grayscale client-fade">
-                        </li>
-                        <li>
-                            <img src="img/skills/php.png" class="grayscale client-fade">
-                        </li>
-                        <li>
-                            <img src="img/skills/geoserver.png" class="grayscale client-fade">
-                        </li>
-                        <li>
-                            <img src="img/skills/mapserver.png" class="grayscale client-fade">
-                        </li>
-                        <li>
-                            <img src="img/skills/postgis-logo.png" class="grayscale client-fade">
-                        </li>
-                        <li>
-                            <img src="img/skills/postgresql.png" class="grayscale client-fade">
-                        </li>
-                        <li>
-                            <img src="img/skills/mysql.png" class="grayscale client-fade">
-                        </li>
+                        {% for image in images %}
+                        <li><img src="{{ image.url }}" class="grayscale client-fade" /></li>
+                        {% endfor %}
                     </ul>
                 </div>
                     
 
             </div>
-        </div>
+        </section>
         
         <!-- Contact -->
-        <div id="contact" class="page">
+        <section id="contact" class="page">
             
             <!-- Map placeholder -->
             <div id="contact-map"></div>
@@ -143,38 +104,25 @@
 
                 <!-- Contact Form -->
                 <div class="col-sm-7">
-                    <form action="mailer.php" id="contact-form" method="post" name="contact-form">
-
-                        <!-- Input fields -->
-                        <div class="row">
-                            <fieldset class="form-group col-md-6">
-                                <input type="text" class="form-control" placeholder="Name" required>
-                            </fieldset>
-
-                            <fieldset class="form-group col-md-6">
-                                <input type="email" class="form-control" placeholder="Email" required>
-                            </fieldset>
-                        </div>
-                            
-                        
-                        <!-- Message -->
-                        <fieldset class="form-group">
-                            <textarea class="form-control" rows="3" placeholder="Message" required></textarea>
-                        </fieldset>
-
-                        <!-- Submit -->
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+                    
+                    {% for page in pages %}
+                    {% if page.category == 'widget' and page.title == 'Contact' %}
+                    
+                    {{ page.content }}
+                    
+                    {% endif %}
+                    {% endfor %}
+                    
                 </div>
             </div>
-        </div>
+        </section>
         
     </main>
 
     <footer class="text-center">
         <ul>
             <!-- Copyright -->
-            <li>&copy; SOOKOLL.EE 2015 </li>
+            <li>&copy; SOOKOLL.EE {{ config.year }} </li>
 
             <!-- Links -->
             <li><a href="http://github.com/sookoll" target="_blank">GITHUB</a></li>

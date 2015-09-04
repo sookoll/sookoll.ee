@@ -41,52 +41,6 @@
         ]
     },
     {
-        "name": "erusev/parsedown-extra",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/erusev/parsedown-extra.git",
-            "reference": "5829ab17e68bd3f3c3da0633647b7874e5784385"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/5829ab17e68bd3f3c3da0633647b7874e5784385",
-            "reference": "5829ab17e68bd3f3c3da0633647b7874e5784385",
-            "shasum": ""
-        },
-        "require": {
-            "erusev/parsedown": "~1.4"
-        },
-        "time": "2015-03-18 20:18:52",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "ParsedownExtra": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Emanuil Rusev",
-                "email": "hello@erusev.com",
-                "homepage": "http://erusev.com"
-            }
-        ],
-        "description": "An extension of Parsedown that adds support for Markdown Extra.",
-        "homepage": "https://github.com/erusev/parsedown-extra",
-        "keywords": [
-            "markdown",
-            "markdown extra",
-            "parsedown",
-            "parser"
-        ]
-    },
-    {
         "name": "twig/twig",
         "version": "v1.18.2",
         "version_normalized": "1.18.2.0",
@@ -144,5 +98,113 @@
         "keywords": [
             "templating"
         ]
+    },
+    {
+        "name": "erusev/parsedown-extra",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/erusev/parsedown-extra.git",
+            "reference": "5829ab17e68bd3f3c3da0633647b7874e5784385"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/5829ab17e68bd3f3c3da0633647b7874e5784385",
+            "reference": "5829ab17e68bd3f3c3da0633647b7874e5784385",
+            "shasum": ""
+        },
+        "require": {
+            "erusev/parsedown": "~1.4"
+        },
+        "time": "2015-03-18 20:18:52",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "ParsedownExtra": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Emanuil Rusev",
+                "email": "hello@erusev.com",
+                "homepage": "http://erusev.com"
+            }
+        ],
+        "description": "An extension of Parsedown that adds support for Markdown Extra.",
+        "homepage": "https://github.com/erusev/parsedown-extra",
+        "keywords": [
+            "markdown",
+            "markdown extra",
+            "parsedown",
+            "parser"
+        ]
+    },
+    {
+        "name": "phpmailer/phpmailer",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/PHPMailer/PHPMailer.git",
+            "reference": "3fb22c5c01a9d3a74aa35e92a85c2d173b1518a9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/3fb22c5c01a9d3a74aa35e92a85c2d173b1518a9",
+            "reference": "3fb22c5c01a9d3a74aa35e92a85c2d173b1518a9",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.0.0"
+        },
+        "require-dev": {
+            "phpdocumentor/phpdocumentor": "*",
+            "phpunit/phpunit": "4.3.*"
+        },
+        "suggest": {
+            "league/oauth2-client": "Needed for Gmail's XOAUTH2 authentication system"
+        },
+        "time": "2015-09-04 09:05:32",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "class.phpmailer.php",
+                "class.phpmaileroauth.php",
+                "class.oauth.php",
+                "class.smtp.php",
+                "class.pop3.php",
+                "extras/EasyPeasyICS.php",
+                "extras/ntlm_sasl_client.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-2.1"
+        ],
+        "authors": [
+            {
+                "name": "Jim Jagielski",
+                "email": "jimjag@gmail.com"
+            },
+            {
+                "name": "Marcus Bointon",
+                "email": "phpmailer@synchromedia.co.uk"
+            },
+            {
+                "name": "Andy Prevost",
+                "email": "codeworxtech@users.sourceforge.net"
+            },
+            {
+                "name": "Brent R. Matzelle"
+            }
+        ],
+        "description": "PHPMailer is a full-featured email creation and transfer class for PHP"
     }
 ]

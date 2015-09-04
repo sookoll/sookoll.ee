@@ -30,6 +30,21 @@ body a:visited {
     border: 7px solid white;
 }
 
+.buttons a.btn {
+    display: block;
+    margin: 0.3em 0;
+    background: #F04;
+    color: white
+}
+
+.buttons a.btn.btn-b {
+    background: rgba(255, 255, 255, .14)
+}
+
+.buttons a.btn i {
+    margin-left: 6px
+}
+
 /* bg map */
 
 #map, #map-cover {
@@ -59,11 +74,11 @@ header a, header a:hover, header a:visited {
 header .logo {
     float: left;
     margin-right: 10px;
-    margin-top: -8px;
+    margin-top: -18px;
     width: 100px;
     height: 80px;
     background: url('../img/logo.png') no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
 header .info {
@@ -123,10 +138,9 @@ header nav.navbar-fixed-top .info {
 
 
 header nav.navbar-fixed-top .logo {
-    width: 50px;
+    width: 60px;
     height: 50px;
     margin-top: -5px;
-    background-image: url('../img/logo_black.png');
 }
 
 header nav.navbar-fixed-top button.navbar-toggler {
@@ -199,20 +213,6 @@ header nav.navbar-fixed-top button.navbar-toggler {
     transition: all .4s ease
 }
 
-#hero .buttons a {
-    display: block;
-    margin: 0.3em 0;
-    background: #F04
-}
-
-#hero .buttons a.btn-skill {
-    background: rgba(255, 255, 255, .14)
-}
-
-#hero .buttons a i {
-    margin-left: 6px
-}
-
 /* main */
 main {
     
@@ -237,6 +237,10 @@ main .page {
     font-weight: 300;
     line-height: 1;
     letter-spacing: -.05rem;
+}
+
+#projects .buttons a.btn-b {
+    background: rgba(0, 0, 0, .24)
 }
 
 /* skills */
@@ -330,9 +334,8 @@ footer li a:hover {
 /* Small devices (landscape phones, 34em and up) */
 @media (min-width: 34em) {
     
-    /* hero */
-    
-    #hero .buttons a {
+    /* general */
+    .buttons a.btn {
         display: inline-block;
         margin: 1em 0.3em;
     }
@@ -394,7 +397,7 @@ footer li a:hover {
     
     /* projects */
     #projects .featurette-heading {
-        margin-top: 4rem;
+        margin-top: 2rem;
     }
     
     /* skills */
@@ -406,77 +409,82 @@ footer li a:hover {
 /* Extra large devices (large desktops, 75em and up) */
 @media (min-width: 75em) {
     
+    
+    
 }
 
 /* fadeing */
 
 @keyframes fadein {
-    from {
-        opacity: 0
-    }
-    to {
-        opacity: 1
-    }
+    from {opacity: 0; top:40px}
+    to {opacity: 1; top: 0}
 }
 
 @-moz-keyframes fadein {
-    from {
-        opacity: 0
-    }
-    to {
-        opacity: 1
-    }
+    from {opacity: 0; top:40px}
+    to {opacity: 1; top: 0}
 }
 
 @-webkit-keyframes fadein {
-    from {
-        opacity: 0
-    }
-    to {
-        opacity: 1
-    }
+    from {opacity: 0; top:40px}
+    to {opacity: 1; top: 0}
 }
 
 @-ms-keyframes fadein {
-    from {
-        opacity: 0
-    }
-    to {
-        opacity: 1
-    }
+    from {opacity: 0; top:40px}
+    to {opacity: 1; top: 0}
 }
 
 @-o-keyframes fadein {
-    from {
-        opacity: 0
-    }
-    to {
-        opacity: 1
-    }
+    from {opacity: 0; top:40px}
+    to {opacity: 1; top: 0}
 }
 
-.fadein-slow {
-    -webkit-animation: fadein 4.5s;
-    -moz-animation: fadein 4.5s;
-    -ms-animation: fadein 4.5s;
-    -o-animation: fadein 4.5s;
-    animation: fadein 4.5s
+@keyframes fadein-left {
+    from {opacity: 0; left:-80px}
+    to {opacity: 1; left: 0}
 }
 
-.fadein-normal {
-    -webkit-animation: fadein 2.5s;
-    -moz-animation: fadein 2.5s;
-    -ms-animation: fadein 2.5s;
-    -o-animation: fadein 2.5s;
-    animation: fadein 2.5s
+@-moz-keyframes fadein-left {
+    from {opacity: 0; left:-80px}
+    to {opacity: 1; left: 0}
+}
+
+@-webkit-keyframes fadein-left {
+    from {opacity: 0; left:-80px}
+    to {opacity: 1; left: 0}
+}
+
+@-ms-keyframes fadein-left {
+    from {opacity: 0; left:-80px}
+    to {opacity: 1; left: 0}
+}
+
+@-o-keyframes fadein-left {
+    from {opacity: 0; left:-80px}
+    to {opacity: 1; left: 0}
 }
 
 .fadein-fast {
-    -webkit-animation: fadein 2s;
-    -moz-animation: fadein 2s;
-    -ms-animation: fadein 2s;
-    -o-animation: fadein 2s;
-    animation: fadein 2s
+    position: relative;
+    opacity: 0;
+    -webkit-animation: fadein ease-in 500ms forwards;
+    -moz-animation: fadein ease-in 500ms forwards;
+    -ms-animation: fadein ease-in 500ms forwards;
+    -o-animation: fadein ease-in 500ms forwards;
+    animation: fadein ease-in 500ms forwards;
+    -webkit-animation-delay: 1s forwards;
+    animation-delay: 1s;
+}
+
+.fadein-left-fast {
+    position: relative;
+    opacity: 0;
+    -webkit-animation: fadein-left ease-in 500ms forwards;
+    -moz-animation: fadein-left ease-in 500ms forwards;
+    -ms-animation: fadein-left ease-in 500ms forwards;
+    -o-animation: fadein-left ease-in 500ms forwards;
+    animation: fadein-left ease-in 500ms forwards;
 }
 
 .client-fade {

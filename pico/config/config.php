@@ -34,21 +34,42 @@ $config['theme'] = 'sookoll';                // Set the theme (defaults to "defa
 /*
  * CONTENT
  */
-// $config['date_format'] = '%D %T';             // Set the PHP date format as described here: http://php.net/manual/en/function.strftime.php
-// $config['pages_order_by'] = 'alpha';           // Order pages by "alpha" or "date"
-// $config['pages_order'] = 'asc';                // Order pages "asc" or "desc"
+$config['date_format'] = '%F %T';             // Set the PHP date format as described here: http://php.net/manual/en/function.strftime.php
+$config['pages_order_by'] = 'date';           // Order pages by "alpha" or "date"
+$config['pages_order'] = 'desc';                // Order pages "asc" or "desc"
 // $config['excerpt_length'] = 50;                // The pages excerpt length (in words)
 $config['content_dir'] = 'content/';    // Content directory
 
 /*
  * TIMEZONE
  */
-// date_default_timezone_set('UTC');              // Timezone may be reqired by your php install
+date_default_timezone_set('Europe/Tallinn');              // Timezone may be reqired by your php install
 
 /*
  * CUSTOM
  */
 // $config['custom_setting'] = 'Hello';           // Can be accessed by {{ config.custom_setting }} in a theme
+
+$config['custom_meta_values'] = array(
+    'in_menu' => 'In_menu',
+    'category' => 'Category',
+    'front' => 'Front',
+    'image' => 'Image'
+);
+
+$config['slider_path'] = 'content/images/skills';
+$config['slider_ext'] = '.png';
+$config['year'] = date("Y");
+
+$config['contact'] = array(
+    'post' => $_POST,
+    'send_to' => 'mihkel@sookoll.ee',
+    'alert_messages' => array(
+        'error' => '<div class="alert alert-danger"><h3>Doh!</h3><p>I\'m sorry: </p><p>%1$s</p></div>', //%1$s = PHPMailer error
+        'validation_error' => '<div class="alert alert-danger"><h3>Doh!</h3><p>Any mistake!?: </p><p>%1$s</p></div>', //%1$s = Validation errors
+        'success' => '<div class="alert alert-success"><h3>Thanks!</h3><p>I will answer as soon as possible!</p></div>',
+    ),
+);
 
 // Keep this line
 return $config;

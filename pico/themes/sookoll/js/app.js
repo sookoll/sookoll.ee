@@ -48,12 +48,14 @@ $(function () {
         
     });
     
-    $('a.nav-link').click(function () {
+    $('a.nav-link').click(function (e) {
+        e.preventDefault();
         $("html, body").stop().animate({
             scrollTop: $($.attr(this, "href")).offset().top
         }, 750);
     });
     
-    
+    $('#projects article:odd').find('.col-md-7').addClass('col-md-push-5');
+    $('#projects article:odd').find('.col-md-5').addClass('col-md-pull-7');
     
 });
