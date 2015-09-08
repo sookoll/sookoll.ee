@@ -1,16 +1,19 @@
 /*
-Title: <span class="text-muted">Geopuzzle:</span> Geographic game based on OpenLayers map
-Description: Web mapping done right.
+Title: Geopuzzle
+Description: Geographic game based on OpenLayers map
 Category: project
 Author: Mihkel Oviir
 Date: 2012/12/12
 Robots: index,follow
-Template: page
 Front: true
-Image: content/images/geopuzzle.png
-Tags: html,js,openlayers,geojson,php,mysql,game
+Image: content/images/projects/geopuzzle.png
+Published: true
+Tags: html,js,openlayers,php,mysql
 */
 
 I made this game just for fun. It is based on OpenLayers 2 and jQuery, backend is written in PHP and geometries are hold in MySQL database.
 
-You can see game online here: [Geopuzzle](http://sookoll.ee/geopusle)
+You can play game online here: [Geopuzzle](http://sookoll.ee/geopusle)  
+Read about spatial data preparation (estonian): [Geopuzzle data setup](%base_url%/blog/geopusle-ettevalmistus)
+
+<!--excerpt-->

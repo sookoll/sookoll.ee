@@ -1,0 +1,8 @@
+Options +FollowSymLinks
+Options -Indexes
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^sookoll.planet.ee$ [OR]
+RewriteCond %{HTTP_HOST} ^www.sookoll.planet.ee$ [OR]
+RewriteCond %{HTTP_HOST} ^www.sookoll.ee$
+RewriteRule ^(.*) http://sookoll.ee/$1 [R=301,L]

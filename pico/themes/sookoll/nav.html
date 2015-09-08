@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand nav-link" href="#top">
+        <a class="navbar-brand" href="{{ base_url }}">
             <div class="logo"></div>
             <div class="info">
                 <div class="name">
@@ -14,18 +14,17 @@
         </a>
         <div class="hidden-sm-down" id="navigation">
             <ul class="nav navbar-nav pull-right">
+                
+                {% for page in pages %}
+                {% if page.index and page.published %}
+                
                 <li class="nav-item">
-                    <a class="nav-link active" href="#top">HOME</a>
+                    <a class="nav-link{% if page == current_page or page.category == meta.category %} active {% endif %}" href="{{ page.url }}">{{ page.title }}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">PROJECTS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#skills">SKILLS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">CONTACT</a>
-                </li>
+                
+                {% endif %}
+                {% endfor %}
+                
             </ul>
         </div>
         <button id="hamburger" class="navbar-toggler hidden-md-up pull-right" type="button" >
@@ -33,18 +32,17 @@
         </button>
         <div id="dropdown">
             <ul class="text-center">
+                
+                {% for page in pages %}
+                {% if page.index and page.published %}
+                
                 <li>
-                    <a class="nav-link" href="#top">HOME</a>
+                    <a class="nav-link" href="{{ page.url }}">{{ page.title }}</a>
                 </li>
-                <li>
-                    <a class="nav-link" href="#projects">PROJECTS</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#skills">SKILLS</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#contact">CONTACT</a>
-                </li>
+                
+                {% endif %}
+                {% endfor %}
+                
             </ul>
         </div>
     </div>

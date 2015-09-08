@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'head.html' %}
+</head>
+
+<body data-spy="scroll" data-target="#navigation" data-offset="180">
+    <div id="map"></div>
+    <div id="map-cover"></div>
+    <header id="top">
+        
+        <nav class="navbar">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="{{ base_url }}">
+                    <div class="logo"></div>
+                    <div class="info">
+                        <div class="name">
+                            MIHKEL OVIIR
+                        </div>
+                        <div class="title">
+                            SOOKOLLI KAARDID
+                        </div>
+                    </div>
+                </a>
+                <div class="hidden-sm-down" id="navigation">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#top">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">PROJECTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">SKILLS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+                <button id="hamburger" class="navbar-toggler hidden-md-up pull-right" type="button" >
+                    &#9776;
+                </button>
+                <div id="dropdown">
+                    <ul class="text-center">
+                        <li>
+                            <a class="nav-link" href="#top">HOME</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#projects">PROJECTS</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#skills">SKILLS</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#contact">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Landing -->
+        <div id="hero" class="text-center">
+            <div class="container">
+
+                {{ content }}
+
+            </div>
+        </div>
+
+    </header>
+    
+    <main>
+        
+        <!-- Projects -->
+        <section id="projects" class="page">
+            <div class="container">
+                
+                
+                {% for page in pages %}
+                {% if page.category == 'project' and page.front and page.published %}
+                
+                <article class="row featurette">
+                    <div class="col-md-7">
+                        <h2 class="featurette-heading">{{ page.title }}: <span class="text-muted">{{ page.description }}</span></h2>
+                        <p class="lead">{{ page.cpp_preview }}</p>
+                        <!-- Skills -->
+                        {% if page.tags|length > 1 %}
+                        <ul class="tags">
+                            {% for tag in page.tags %}
+                            <li>{{ tag }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-5">
+                        <img class="featurette-image img-responsive center-block" src="{{ base_url }}/{{ page.image }}" alt="Generic placeholder image">
+                    </div>
+                </article>
+
+                <hr class="featurette-divider">
+                
+                
+                {% endif %}
+                {% endfor %}
+                
+                <!-- buttons -->
+                <div class="buttons text-center">
+                    <a href="{{ base_url }}/projects" class="btn btn-lg btn-primary">Browse more projects<i class="fa fa-chevron-right"></i></a>
+                    <a href="{{ base_url }}/projects/geoforms" class="btn btn-lg btn-primary-outline">Read about Geoforms <i class="fa fa-chevron-right"></i></a>
+                </div>
+                
+            </div>
+
+        </section>
+        
+        <section id="skills" class="text-muted text-center page">
+            <div class="container">
+                <div class="row">
+                    <ul>
+                        {% for image in images %}
+                        <li><img src="{{ image.url }}" class="grayscale client-fade" /></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <hr>
+                
+                <!-- buttons -->
+                <div class="buttons text-center">
+                    <a href="http://hub.sookoll.ee/estgis2013" class="btn btn-lg btn-primary">GIS future is JS<i class="fa fa-chevron-right"></i></a><br>
+                    <small>My presentation at <a href="http://www.estgis.ee/uritused/aastakonverents/2013-1/kava/">ESTGIS 2013</a> annual conference</small>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Contact -->
+        <section id="contact" class="page">
+            
+            <!-- Map placeholder -->
+            <div id="contact-map"></div>
+            
+            <div class="container">
+
+                <!-- Contact details -->
+                <div class="col-sm-5 text-center profile">
+                    <img alt="avatar" class="avatar" src="http://www.gravatar.com/avatar/7a261b9f345522751c0fcb20857a2740">
+
+                    <div class="social">
+                        <a href="http://github.com/sookoll" target="_blank"><i class="fa fa-github"></i></a>
+                        <a href="mailto:mihkel@sookoll.ee"><i class="fa fa-envelope"></i></a>
+                        <a href="https://twitter.com/sookoll" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="skype:moviir?chat"><i class="fa fa-skype"></i></a>
+                    </div>
+
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-sm-7">
+                    
+                    <form method="post" name="contact">
+                        <!-- Input fields -->
+                        <div class="row">
+
+                            <fieldset class="form-group col-lg-6">
+                                <input type="text" name="name" class="form-control" placeholder="Name" required>
+                            </fieldset>
+
+                            <fieldset class="form-group col-lg-6">
+                                <input type="email" name="mail" class="form-control" placeholder="Email" required>
+                            </fieldset>
+
+                        </div>
+
+                        <!-- Message -->
+                        <fieldset class="form-group">
+                            <textarea class="form-control" name="message" rows="3" placeholder="Message" required></textarea>
+                        </fieldset>
+
+                        <!-- Submit -->
+                        <button type="submit" name="contact" value="true" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Send</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    {% include 'footer.html' %}
+
+</body>
+
+</html>

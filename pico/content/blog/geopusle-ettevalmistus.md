@@ -1,11 +1,20 @@
-Date: 2014-02-12
+/*
 Title: Geopusle mängu andmete ettevalmistamine
+Description:
+Category: post
+Author: Mihkel Oviir
+Date: 2014/02/12
+Robots: index,follow
+Image: content/images/posts/geopusle-ettevalmistus.png
 Published: true
 Tags: postgis, qgis, ogr, geojson, shp
-Excerpt:
+*/
 
-Täna avame natuke [Geopusle](http://sookoll.ee/geopusle) mängu loomise telgitaguseid. Valmistame ette ühe uue mängu (CGI Euroopa riigid) geoandmed. Ühest küljest on see rohkem mulle endale tegevuste dokumenteerimiseks (no et ei peaks iga kord netis tuhlama :)  
+Täna avame natuke [Geopusle](http://sookoll.ee/geopusle) mängu loomise telgitaguseid ja
+valmistame ette ühe uue mängu (CGI Euroopa riigid) geoandmed. Ühest küljest on see rohkem mulle endale tegevuste dokumenteerimiseks (no et ei peaks iga kord netis tuhlama :)  
 Teiseks on tegevused üsna universaalsed ja võivad sobida suvaliste geoandmete töötluseks.
+
+<!--excerpt-->
 
 ## Tööriistad
 Kasutame siin juhendis töökeskkonnana [Ubuntu 13.10](http://ubuntu.com) op-süsteemi.  
@@ -45,7 +54,7 @@ Selekteerime välja CGI riigid ja teisendame koordinaatsüsteemi [EPSG:3034](htt
 
 Avame QGISi ja vaatame kuidas meie euroopa välja näeb:
 
-![](https://dl.dropboxusercontent.com/u/36271555/scriptogram/2014.02.12.cgi_puzzle1.png)
+![](https://dl.dropboxusercontent.com/u/36271555/scriptogram/2014.02.12.cgi_puzzle1.png){.img-responsive .center-block}
 
 Et riigid oleksid kompaktsed ja selgelt tuvastatavad, siis oleks vaja mõndadel riikidel väga perifeersed osad eemaldada (Prantsusmaa, Hispaania, Portugali, Hollandi, Norra kaugemal asuvad osad). Lammutame riikide pinnad lihtpindadeks:
 
@@ -60,7 +69,7 @@ Lisame tabeli cgi_europa_simple QGISi kihina, aktiveerime kihi muutmise, kustuta
 
 Nüüd näeb meie kiht välja nii:
 
-![](https://dl.dropboxusercontent.com/u/36271555/scriptogram/2014.02.12.cgi_puzzle2.png)
+![](https://dl.dropboxusercontent.com/u/36271555/scriptogram/2014.02.12.cgi_puzzle2.png){.img-responsive .center-block}
 
 See on tulemus, mida soovisime. Geopusle mäng kasutab andmeallikana MySQL andmebaasi või GeoJSON faili, seega on vajalik konverteerida tulemus lihtsasti käsitletavasse vaheformaati. Ekspordime tabeli andmebaasist GeoJSON failiks:
 

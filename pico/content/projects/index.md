@@ -1,14 +1,10 @@
 /*
 Title: Projects
 Description: Web mapping done right.
+Date: 2013/01/02
 Author: Mihkel Oviir
-Date: 2014/08/19
 Robots: index,follow
-Template: index
-In_Menu: true
-Position: 1
-Category_Position: 2
-Category_Title: Projects
+Index: true
+Category: project
+Published: true
 */
-
-# Projects done

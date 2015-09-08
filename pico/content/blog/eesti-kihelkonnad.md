@@ -1,8 +1,14 @@
-Date: 2014-01-21
+/*
 Title: D3.js kasutamine Eesti Kihelkondade kujutamisel
-Published: false
-Tags: d3, coding, javascript
-Excerpt:
+Description:
+Category: post
+Author: Mihkel Oviir
+Date: 2014/01/21
+Robots: index,follow
+Image: content/images/posts/foss4g.jpg
+
+Tags: d3, js, topojson
+*/
 
 Juhend, kuidas kasutada D3.js raamistikku Eesti Kihelkondade kujutamisel
 

@@ -34,7 +34,7 @@ $config['theme'] = 'sookoll';                // Set the theme (defaults to "defa
 /*
  * CONTENT
  */
-$config['date_format'] = '%F %T';             // Set the PHP date format as described here: http://php.net/manual/en/function.strftime.php
+$config['date_format'] = '%F';             // Set the PHP date format as described here: http://php.net/manual/en/function.strftime.php
 $config['pages_order_by'] = 'date';           // Order pages by "alpha" or "date"
 $config['pages_order'] = 'desc';                // Order pages "asc" or "desc"
 // $config['excerpt_length'] = 50;                // The pages excerpt length (in words)
@@ -51,10 +51,11 @@ date_default_timezone_set('Europe/Tallinn');              // Timezone may be req
 // $config['custom_setting'] = 'Hello';           // Can be accessed by {{ config.custom_setting }} in a theme
 
 $config['custom_meta_values'] = array(
-    'in_menu' => 'In_menu',
+    'index' => 'Index',
     'category' => 'Category',
     'front' => 'Front',
-    'image' => 'Image'
+    'image' => 'Image',
+    'published' => 'Published'
 );
 
 $config['slider_path'] = 'content/images/skills';
@@ -70,6 +71,9 @@ $config['contact'] = array(
         'success' => '<div class="alert alert-success"><h3>Thanks!</h3><p>I will answer as soon as possible!</p></div>',
     ),
 );
+
+$config['cpp_read_more_tag'] = '<!--excerpt-->';
+$config['cpp_read_more_text'] = '';
 
 // Keep this line
 return $config;

@@ -3,12 +3,27 @@
 body {
     font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
     font-size: 18px;
+    font-weight: 200;
     position: relative;
 }
 
 body a,
-body a:visited {
+body a:visited,
+body a:hover,
+body a:active {
     color: #F65151;
+}
+
+body pre code {
+    font-size: 80%
+}
+
+h2 {
+    margin-top: 3rem
+}
+
+body i, body em {
+    font-family: 'open sans', sans-serif;
 }
 
 .tags {
@@ -30,11 +45,34 @@ body a:visited {
     border: 7px solid white;
 }
 
+.btn-primary {
+    background-color: #f04;
+    border-color: #f04;
+    color: white;
+}
+
+.btn-primary-outline {
+    background-color: #fff;
+    border-color: #f04;
+    color: #f04
+}
+
+.btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:visited, .btn-primary:focus, .btn-primary:hover, .open>.btn-primary.dropdown-toggle {
+    background-color: #f04;
+    border-color: #f04;
+    color: white;
+}
+
+.btn-primary-outline.active, .btn-primary-outline.focus, .btn-primary-outline:active, .btn-primary-outline:visited, .btn-primary-outline:focus, .btn-primary-outline:hover,
+.open>.btn-primary-outline.dropdown-toggle {
+    background-color: #fff;
+    border-color: #f04;
+    color: #f04
+}
+
 .buttons a.btn {
     display: block;
     margin: 0.3em 0;
-    background: #F04;
-    color: white
 }
 
 .buttons a.btn.btn-b {
@@ -67,7 +105,7 @@ header {
     font-family: 'open sans';
 }
 
-header a, header a:hover, header a:visited {
+header a, header a:hover, header a:active, header a:visited {
     color: white;
 }
 
@@ -108,6 +146,7 @@ header .navbar-nav .nav-link {
     font-size: 13px;
     padding: 1rem 0.5rem;
     border-bottom: transparent 4px solid;
+    text-transform: uppercase
 }
 
 header .navbar-nav .nav-link.active {
@@ -119,7 +158,7 @@ header .navbar-nav .nav-link.active {
 header nav.navbar-fixed-top {
     padding-bottom: 0;
     background: rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid #F5F5F5
+    border-bottom: 1px solid #F5F5F5;
 }
 
 header nav.navbar-fixed-top li {
@@ -159,7 +198,8 @@ header nav.navbar-fixed-top button.navbar-toggler {
     position: absolute;
     margin: 60px 20px 30px;
     display: none;
-    border-radius: 3px
+    border-radius: 3px;
+    z-index: 2
 }
 
 #dropdown ul {
@@ -222,13 +262,21 @@ main .page {
     background: white;
 }
 
+main h2 a,
+main h2 a:visited,
+main h2 a:hover,
+main h2 a:active {
+    color: #333;
+    text-decoration: none
+}
+
 /* projects */
 
-#projects {
+main section {
     padding: 5rem 0;
 }
 
-#projects .featurette-divider {
+main section .featurette-divider {
     margin: 5rem 0; /* Space out the Bootstrap <hr> more */
 }
 
@@ -416,26 +464,51 @@ footer li a:hover {
 /* fadeing */
 
 @keyframes fadein {
-    from {opacity: 0; top:40px}
-    to {opacity: 1; top: 0}
+    from {opacity: 0}
+    to {opacity: 1}
 }
 
 @-moz-keyframes fadein {
-    from {opacity: 0; top:40px}
-    to {opacity: 1; top: 0}
+    from {opacity: 0}
+    to {opacity: 1}
 }
 
 @-webkit-keyframes fadein {
-    from {opacity: 0; top:40px}
-    to {opacity: 1; top: 0}
+    from {opacity: 0}
+    to {opacity: 1}
 }
 
 @-ms-keyframes fadein {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@-o-keyframes fadein {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes fadein-bottom {
     from {opacity: 0; top:40px}
     to {opacity: 1; top: 0}
 }
 
-@-o-keyframes fadein {
+@-moz-keyframes fadein-bottom {
+    from {opacity: 0; top:40px}
+    to {opacity: 1; top: 0}
+}
+
+@-webkit-keyframes fadein-bottom {
+    from {opacity: 0; top:40px}
+    to {opacity: 1; top: 0}
+}
+
+@-ms-keyframes fadein-bottom {
+    from {opacity: 0; top:40px}
+    to {opacity: 1; top: 0}
+}
+
+@-o-keyframes fadein-bottom {
     from {opacity: 0; top:40px}
     to {opacity: 1; top: 0}
 }
@@ -465,7 +538,7 @@ footer li a:hover {
     to {opacity: 1; left: 0}
 }
 
-.fadein-fast {
+.fadein {
     position: relative;
     opacity: 0;
     -webkit-animation: fadein ease-in 500ms forwards;
@@ -473,6 +546,16 @@ footer li a:hover {
     -ms-animation: fadein ease-in 500ms forwards;
     -o-animation: fadein ease-in 500ms forwards;
     animation: fadein ease-in 500ms forwards;
+}
+
+.fadein-bottom {
+    position: relative;
+    opacity: 0;
+    -webkit-animation: fadein-bottom ease-in 500ms forwards;
+    -moz-animation: fadein-bottom ease-in 500ms forwards;
+    -ms-animation: fadein-bottom ease-in 500ms forwards;
+    -o-animation: fadein-bottom ease-in 500ms forwards;
+    animation: fadein-bottom ease-in 500ms forwards;
     -webkit-animation-delay: 1s forwards;
     animation-delay: 1s;
 }
