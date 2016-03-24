@@ -29,6 +29,10 @@ class Contact {
 
 		// Post to this form was made.
 		if (isset($this->post['contact']) AND $this->post['contact'] == 'true') {
+			// try to fool spambot
+			if (!empty($this->post['email'])) {
+				return;
+			}
 			foreach (array('name', 'mail', 'message') as $value) {
 				if ($value == 'mail') {
 					if (filter_var($this->post['mail'], FILTER_VALIDATE_EMAIL) === false) {

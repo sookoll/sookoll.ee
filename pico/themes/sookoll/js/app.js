@@ -18,7 +18,9 @@ $(function () {
         c_map = L.map('contact-map', {
             attributionControl: false
         }).setView(p2, 12);
-        L.tileLayer('http://{s}.tiles.mapbox.com/v3/examples.bc17bb2a/{z}/{x}/{y}.png').addTo(c_map);
+        L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
+            key: 'lrqdo.me2bng9n'
+        }).addTo(c_map);
         c_map.scrollWheelZoom.disable();
     }
     
