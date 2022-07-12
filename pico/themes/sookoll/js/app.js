@@ -2,9 +2,9 @@
 /*global $, L */
 $(function () {
     'use strict';
-    
+
     /* map */
-    
+
     var p1 = [58.45, 25.05],
         p2 = [58.37498, 26.73256],
         c_map,
@@ -12,39 +12,50 @@ $(function () {
             zoomControl: false,
             attributionControl: false
         }).setView(p1, 12);
-    L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png').addTo(map);
-    
+
+    var tms1 = new L.TileLayer('https://tiles.maaamet.ee/tm/tms/1.0.0/hallkaart@GMC/{z}/{x}/{y}.png&ASUTUS=MAAAMET&KESKKOND=EXAMPLES', {
+        continuousWorld: true,
+        tms: true
+    }).addTo(map);
+
+    var tms2 = new L.TileLayer('https://tiles.maaamet.ee/tm/tms/1.0.0/hallkaart@GMC/{z}/{x}/{y}.png&ASUTUS=MAAAMET&KESKKOND=EXAMPLES', {
+        continuousWorld: true,
+        tms: true
+    });
+
+
+
+    //L.tileLayer('https://maps.omniscale.net/v2/{id}/style.grayscale/{z}/{x}/{y}.png').addTo(map);
+
     if ($('#contact-map').length > 0) {
         c_map = L.map('contact-map', {
             attributionControl: false
         }).setView(p2, 12);
-        L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
-            key: 'lrqdo.me2bng9n'
-        }).addTo(c_map);
+        tms2.addTo(c_map);
         c_map.scrollWheelZoom.disable();
     }
-    
+
     /* header */
-    
+
     var h = $("#hamburger"),
         t = $("#dropdown");
-    
+
     h.click(function (e) {
         e.preventDefault();
         t.slideToggle("fast");
     });
-    
+
     t.on('click', 'a', function () {
         $(t).slideToggle();
     });
-    
+
     var header = $('header'),
         nav = header.find('nav'),
         anchor = $('main .page:first').offset().top - 100,
         fixed = false;
-    
+
     $(window).scroll(function () {
-        
+
         if ($(this).scrollTop() >= anchor) {
             if (!fixed) {
                 header.css('padding-top', nav.outerHeight(true));
@@ -60,9 +71,9 @@ $(function () {
                 });
             }
         }
-        
+
     });
-    
+
     $('a.nav-link[href^=#]').click(function (e) {
         e.preventDefault();
         var hash = $.attr(this, "href");
@@ -72,10 +83,10 @@ $(function () {
             }, 750);
         }
     });
-    
+
     $('article:odd').find('.col-md-7').addClass('col-md-push-5');
     $('article:odd').find('.col-md-5').addClass('col-md-pull-7');
-    
+
     hljs.initHighlightingOnLoad();
-    
+
 });
